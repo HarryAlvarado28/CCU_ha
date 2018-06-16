@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FUSProjectUsageTrigger">
+    <session id="964200823">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="go" value="5" />
+          <entry key="md" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Go" value="4" />
+          <entry key="Markdown" value="1" />
+          <entry key="Scratch" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="go" value="1128" />
+          <entry key="md" value="592" />
+          <entry key="txt" value="81" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Go" value="1128" />
+          <entry key="Markdown" value="592" />
+          <entry key="PLAIN_TEXT" value="81" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.go.postfix.template.usages.trigger">
+        <counts>
+          <entry key=".append" value="1" />
+          <entry key=".pointer" value="1" />
+          <entry key=".real" value="1" />
+          <entry key=".var" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+</project>
