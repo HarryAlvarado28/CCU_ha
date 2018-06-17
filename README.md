@@ -20,7 +20,7 @@ El algoritmo *mysort.go* simulara el comando ‘sort’, este comando nos permit
 ### mycat.go
 El algoritmo *mycat.go* simulara el comando ‘cat’, lo caul nos permite visualizar el contenido de un archivo; en opciones tenemos:
 1.	-c : cantidad, muestra la cantidad de caracteres que contiene el archivo.
-2.	-e : empieza, empezara el orden desde el valor especificado.
+2.	-n : enumeración, enumera las lineas del archivo.
 
 
 
