@@ -28,13 +28,13 @@ func main() {
 
 func onlyFile(string2 string) {
 	myFile, err := ioutil.ReadFile(string2)
-	ifErrRead(err != nil)
+	ifErrRead_cat(err != nil) //if it goes wrong, panic
 	fmt.Print("****Loque dice el archivo****:\n", string(myFile), "\n")
 }
 
 func withArgs(string1, string2 string) {
 	myFile, err := ioutil.ReadFile(string2)
-	ifErrRead(err != nil) //if it goes wrong, panic
+	ifErrRead_cat(err != nil) //if it goes wrong, panic
 
 	myFile = append(myFile, 03)
 
@@ -80,7 +80,7 @@ func withArgs(string1, string2 string) {
 	}
 }
 
-func ifErrRead(c bool) {
+func ifErrRead_cat(c bool) {
 	if c {
 		panic("Error al abrir el fichero, esto podria deberse a que no existe." +
 			"\n" +

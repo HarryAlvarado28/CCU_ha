@@ -23,6 +23,9 @@ El algoritmo *mycat.go* simulara el comando ‘cat’, lo cual nos permite visua
 2.	-n : enumeración, enumera las lineas del archivo.
 3.  -m : enumeración, esta enumeración ignora las lineas en blanco.
 
-
+### mygrep.go
+El algoritmo *mygrep.go* simulara el comando ‘grep’, este comando nos permite realizar busqueda de una palabra en un archivo; en opciones tenemos:
+1.  -v : grep -v hola pp.txt lista las líneas que no contengan la cadena hola del archivo pp.txt.
+2.  -n : grep -n hola pp.txt las líneas concordantes con la cadena hola del archivo pp.txt se mostrarán acompañadas del número de línea.
 
 *El <b>settings.jar</b> son las configuraciones que utilizarón en el IDE.*
