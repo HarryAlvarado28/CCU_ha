@@ -17,21 +17,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="1339" />
-          <entry key="md" value="641" />
-          <entry key="txt" value="295" />
+          <entry key="go" value="2245" />
+          <entry key="md" value="648" />
+          <entry key="txt" value="451" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="1339" />
-          <entry key="Markdown" value="641" />
-          <entry key="PLAIN_TEXT" value="295" />
+          <entry key="Go" value="2245" />
+          <entry key="Markdown" value="648" />
+          <entry key="PLAIN_TEXT" value="451" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
         <counts>
-          <entry key=".append" value="1" />
+          <entry key=".append" value="3" />
           <entry key=".pointer" value="1" />
           <entry key=".real" value="1" />
           <entry key=".var" value="1" />
