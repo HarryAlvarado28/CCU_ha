@@ -30,13 +30,36 @@ func bArgs(string1, string2 string) {
 	myFile, err := ioutil.ReadFile(string2)
 	ifErrRead_grep(err != nil) //if it goes wrong, panic
 
-	for k := 0; k < len(myFile); k += len(string1) {
-		if len(string1) < (len(myFile) - k) {
-			if string1 == string(myFile)[k:k+(len(string1))] {
-				fmt.Println(string(myFile)[k : k+(len(string1))])
+	myFile = append(myFile, 03)
+	j := 0
+	k := 0
+	n := 0
+	tag := 0
+	for i := 0; i < len(myFile); i++ {
+		if myFile[i] == byte(10) || myFile[i] == byte(03) {
+			for ; k < i; k += len(string1) {
+				if len(string1) < (i - k) {
+					if string1 == string(myFile[k:k+(len(string1))]) {
+						//fmt.Println(string(myFile)[k : k + (len(string1))])
+						tag = 1
+					}
+
+				}
 			}
+			n += 1
+			//fmt.Print(" ", n, "  ")
+			for ; j <= i; j++ {
+				if tag == 1 {
+					fmt.Print(string(myFile[j]))
+				}
+
+			}
+			tag = 0
+
 		}
+
 	}
+	myFile = myFile[0 : len(myFile)-1]
 }
 
 func cArgs(string1, string2, string3 string) {

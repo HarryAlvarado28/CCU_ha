@@ -36,13 +36,13 @@ func withArgs(string1, string2 string) {
 	myFile, err := ioutil.ReadFile(string2)
 	ifErrRead_cat(err != nil) //if it goes wrong, panic
 
-	myFile = append(myFile, 03)
-
 	switch string1 {
 	case "-c":
 		fmt.Println("\n\tLa cantidad de caracteres que contiene el archivo es: ", len(myFile), " \n")
 		break
 	case "-n":
+		myFile = append(myFile, 03)
+
 		n, j := 0, 0
 		for i := 0; i < len(myFile); i++ {
 			if myFile[i] == byte(10) || myFile[i] == byte(03) {
@@ -53,9 +53,12 @@ func withArgs(string1, string2 string) {
 				}
 			}
 		}
+		myFile = myFile[0 : len(myFile)-1]
 		fmt.Println()
 		break
 	case "-m":
+		myFile = append(myFile, 03)
+
 		n, j := 0, 0
 		for i := 0; i < len(myFile); i++ {
 			if myFile[i] == byte(10) && myFile[i+1] != byte(10) {
@@ -66,6 +69,7 @@ func withArgs(string1, string2 string) {
 				}
 			}
 		}
+		myFile = myFile[0 : len(myFile)-2]
 		fmt.Println()
 		break
 	default:
