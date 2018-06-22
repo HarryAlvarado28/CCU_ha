@@ -43,7 +43,6 @@ func bArgs(string1, string2 string) {
 						//fmt.Println(string(myFile)[k : k + (len(string1))])
 						tag = 1
 					}
-
 				}
 			}
 			n += 1
@@ -55,9 +54,7 @@ func bArgs(string1, string2 string) {
 
 			}
 			tag = 0
-
 		}
-
 	}
 	myFile = myFile[0 : len(myFile)-1]
 }
