@@ -19,8 +19,27 @@ El algoritmo *mycat.go* simulara el comando ‘cat’, lo cual nos permite visua
 3.  -m : enumeración, esta enumeración ignora las lineas en blanco.
 
 ### mygrep.go
-El algoritmo *mygrep.go* simulara el comando ‘grep’, este comando nos permite realizar busqueda de una palabra en un archivo; en opciones tenemos:
+(no terminado) El algoritmo *mygrep.go* simulara el comando ‘grep’, este comando nos permite realizar busqueda de una palabra en un archivo; en opciones tenemos:
 1.  -v : grep -v hola pp.txt lista las líneas que no contengan la cadena hola del archivo pp.txt.
 2.  -n : grep -n hola pp.txt las líneas concordantes con la cadena hola del archivo pp.txt se mostrarán acompañadas del número de línea.
 
 *El <b>settings.jar</b> son las configuraciones que utilizarón en el IDE.*
+
+## Scripts .sh & .bat
+*Elabore dos programas por lotes uno para el S.O. Ubuntu y otro para Windows.*
+
+Ambos programas deben tener la misma idea, es decir ofrecer el mismo resultado. La intención es observar claramente la diferencia que existe al momento de programar un programa por lotes (batch) para Windows y un script o programa por lotes para Unix.
+
+Los archivos <b>scriptUnix.sh</b> y <b>scriptMSDOS.bat</b> tendrán la tarea de realizar versiones de copias de cualquier directorio.
+
+### ¿Funcionalidad?
+* Esto podría utilizarse para realizar copias de seguridad de cualquier sistema de directorio.
+
+### ¿En que consiste?
+Consiste en especificar dos ruta y un valor numérico.
+
+* OOO> La primera ruta será el directorio que se desea copiar si no existe el directorio el programa no realizara nada.
+
+* DDD> La segunda ruta será el directorio donde se realizarán la copia especificadas de la primera dirección,  se creara distintas versiones de directorio por cada ves que se realice la copia.
+
+* TTT> Se debe definir el tiempo en valor numérico, el tiempo estará evaluado en segundos.
