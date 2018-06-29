@@ -4,8 +4,8 @@
     <session id="964200823">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Local" value="1" />
-          <entry key="Local (1)" value="3" />
+          <entry key="Local" value="4" />
+          <entry key="Local (1)" value="5" />
           <entry key="bat" value="1" />
           <entry key="go" value="21" />
           <entry key="md" value="11" />
@@ -20,7 +20,7 @@
           <entry key="Markdown" value="11" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="Terminal Session" value="4" />
+          <entry key="Terminal Session" value="9" />
           <entry key="x86 Plan9 Assembly" value="1" />
         </counts>
       </usages-collector>
@@ -29,15 +29,17 @@
           <entry key="bat" value="22" />
           <entry key="go" value="3434" />
           <entry key="md" value="1365" />
-          <entry key="txt" value="832" />
+          <entry key="sh" value="718" />
+          <entry key="txt" value="879" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Bash" value="718" />
           <entry key="Bat" value="22" />
           <entry key="Go" value="3434" />
           <entry key="Markdown" value="1365" />
-          <entry key="PLAIN_TEXT" value="832" />
+          <entry key="PLAIN_TEXT" value="879" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
