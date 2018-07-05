@@ -30,16 +30,14 @@ El algoritmo *mycat.go* simulara el comando ‘cat’, lo cual nos permite visua
 
 Ambos programas deben tener la misma idea, es decir ofrecer el mismo resultado. La intención es observar claramente la diferencia que existe al momento de programar un programa por lotes (batch) para Windows y un script o programa por lotes para Unix.
 
-Los archivos <b>scriptUnix.sh</b> y <b>scriptMSDOS.bat</b> tendrán la tarea de realizar versiones de copias de cualquier directorio.
+Los archivos <b>scriptUnix.sh</b> y <b>scriptMSDOS.bat</b> tendrán la tarea de realizar versiones de copias de cualquier archivo o directorio.
 
 ### ¿Funcionalidad?
-* Esto podría utilizarse para realizar copias de seguridad de cualquier sistema de directorio.
+* Esto podría utilizarse para realizar copias de seguridad de cualquier estructura de directorio.
 
 ### ¿En que consiste?
-Consiste en especificar dos ruta y un valor numérico.
+_Consiste en especificar una ruta y un valor numérico._
 
-* OOO> La primera ruta será el directorio que se desea copiar si no existe el directorio el programa no realizara nada.
+* **FUN**> Sera la ruta del archivo o directorio que se utilizara para realizar el respaldo o copia.
 
-* DDD> La segunda ruta será el directorio donde se realizarán la copia especificadas de la primera dirección,  se creara distintas versiones de directorio por cada ves que se realice la copia.
-
-* TTT> Se debe definir el tiempo en valor numérico, el tiempo estará evaluado en segundos.
+* **Tiempo**> Es el tiempo que se utilizara para realizar la copia, el valor predeterminado es 60 segundos.

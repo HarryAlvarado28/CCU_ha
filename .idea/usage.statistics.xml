@@ -5,10 +5,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Local" value="4" />
-          <entry key="Local (1)" value="6" />
-          <entry key="bat" value="1" />
+          <entry key="Local (1)" value="7" />
+          <entry key="bat" value="2" />
           <entry key="go" value="21" />
-          <entry key="md" value="11" />
+          <entry key="md" value="15" />
           <entry key="s" value="1" />
           <entry key="sh" value="1" />
         </counts>
@@ -16,30 +16,31 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="1" />
+          <entry key="Bat" value="1" />
           <entry key="Go" value="20" />
-          <entry key="Markdown" value="11" />
+          <entry key="Markdown" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="Terminal Session" value="10" />
+          <entry key="Terminal Session" value="11" />
           <entry key="x86 Plan9 Assembly" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="bat" value="22" />
+          <entry key="bat" value="24" />
           <entry key="go" value="3434" />
-          <entry key="md" value="1365" />
-          <entry key="sh" value="1840" />
-          <entry key="txt" value="931" />
+          <entry key="md" value="1627" />
+          <entry key="sh" value="1905" />
+          <entry key="txt" value="1046" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="1840" />
-          <entry key="Bat" value="22" />
+          <entry key="Bash" value="1905" />
+          <entry key="Bat" value="24" />
           <entry key="Go" value="3434" />
-          <entry key="Markdown" value="1365" />
-          <entry key="PLAIN_TEXT" value="931" />
+          <entry key="Markdown" value="1627" />
+          <entry key="PLAIN_TEXT" value="1046" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">

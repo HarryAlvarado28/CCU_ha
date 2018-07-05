@@ -1,4 +1,5 @@
 @echo off
+
 ::variables pre-definidas
 set name_dir_backrest=backupSave_fun
 set name_file_backrest=backup.log
@@ -7,6 +8,7 @@ set tt=60
 
 echo [FUN, ruta para realizar el respaldo]
 echo [Tiempo, cada que tiempo se desea hacer la copia, opcional (el valor por defecto es 60s)]
+
 set /p fun=FUN:
 set /p tt=Tiempo:
 
