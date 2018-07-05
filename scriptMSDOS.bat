@@ -1,74 +1,60 @@
 @echo off
-::pause
 ::variables pre-definidas
-set name_file_backup="backup.log"
+set name_dir_backrest=backupSave_fun
+set name_file_backrest=backup.log
 set cont=0
+set tt=60
 
-set /p ori="Ruta origen: "
-set /p dts="Ruta destino (opcional): "
-set /p tt="Tiempo: "
+echo [FUN, ruta para realizar el respaldo]
+echo [Tiempo, cada que tiempo se desea hacer la copia, opcional (el valor por defecto es 60s)]
+set /p fun=FUN:
+set /p tt=Tiempo:
 
-echo "-----------------------------------------------------------------"
-echo "Fecha exacta de inicio del backup: %date%-%time%"
-echo "[Ruta origen: %ori%]"
-echo "[Ruta destino: %dts%]"
-echo "[Se respalda cada: %tt% segundo/s]"
-echo "Datos almacenados en el archivo {%name_file_backup%}"
-echo "-----------------------------------------------------------------"
+echo -----------------------------------------------------------------
+echo Fecha exacta de inicio del backup: %date%-%time%
+echo [FUN: %fun%]
+echo [Se respalda cada: %tt% segundo/s]
+echo Datos almacenados en el archivo {%name_file_backrest%}
+echo -----------------------------------------------------------------
 
-echo . > %name_file_backup%
+echo . > %name_file_backrest%
 
-echo "-----------------------------------------------------------------" >> %name_file_backup%
-echo "Fecha exacta de inicio del backup: %date%-%time%"                  >> %name_file_backup%
-echo "[Ruta origen: %ori%]"                                              >> %name_file_backup%
-echo "[Ruta destino: %dts%]"                                             >> %name_file_backup%
-echo "[Se respalda cada: %tt% segundo/s]"                                >> %name_file_backup%
-echo "-----------------------------------------------------------------" >> %name_file_backup%
+echo ----------------------------------------------------------------- >> %name_file_backrest%
+echo    Fecha exacta de inicio del backup: %date%-%time%>> %name_file_backrest%
+echo    [FUN: %fun%]>> %name_file_backrest%
+echo    [Se respalda cada: %tt% segundo/s]>> %name_file_backrest%
+echo ----------------------------------------------------------------- >> %name_file_backrest%
 
-
-::@pause
-::set dts1=%chdir%/%%
-::echo "Las copias estan es> %dts1%"
-::@pause
-mkdir %dts%/bkp
+mkdir %name_dir_backrest%
+cd %name_dir_backrest%
 :loop
 
     timeout /t %tt%
-
-    echo ".............................................................." >> %name_file_backup%
-    echo ".............................................................."
+    ::echo .............................................................. >> %name_file_backrest%
+    ::echo ..............................................................
 
     set /A cont = %cont% + 1
+    set ruta=receta_%cont%
 
-    set ruta=receta_%cont%_-%time%
-    ::cd bkp
-    mkdir %dts%/bkp/%ruta%
-    ::echo bkp/%ruta%
-    ::echo %ruta%
-    copy %ori% %dts%/bkp/%ruta%
+    mkdir %ruta%
+    copy %fun% %ruta%
 
-    echo fecha: %date% >> %name_file_backup%
-    echo hora: %time%  >> %name_file_backup%
-
-    echo "Respaldo # :%cont% " >> %name_file_backup%
-
-    echo Time: %time%
-
-    echo "         Copia realizada!!! %name_file_backup%"
-
-    echo "Respaldo # %cont% "
-
-    echo "Ruta:"
-    chdir
-    echo "Name: [%dts%/bkp/%ruta%]"
-
-    echo "Ruta:"              >> %name_file_backup%
-    chdir                     >> %name_file_backup%
-    echo "Name: [%dts%/bkp/%ruta%]"     >> %name_file_backup%
-
-    echo ".............................................................." >> %name_file_backup%
-    echo ".............................................................."
-
+    cd ..
+      echo fecha: %date%>> %name_file_backrest%
+      echo hora: %time%>> %name_file_backrest%
+      echo    Respaldo # :%cont%>> %name_file_backrest%
+    cd %name_dir_backrest%
+      echo Time: %time%
+      echo          Copia realizada!!! %name_file_backrest%
+      echo          Respaldo # %cont%
+      echo Ruta base:
+        chdir
+      echo Nombre del directorio: [%ruta%]
+    cd ..
+      echo Ruta base:>> %name_file_backrest%
+    chdir >> %name_file_backrest%
+      echo Nombre del directorio: [%ruta%]>> %name_file_backrest%
+      echo .............................................................. >> %name_file_backrest%
+      echo ..............................................................
+    cd %name_dir_backrest%
 goto loop
-
-exit
