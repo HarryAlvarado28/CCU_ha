@@ -47,8 +47,6 @@ public class F5 extends JFrame{
 }
 
 class LaminaBase extends JPanel {
-	
-		
 	/**
 	 * 
 	 */
@@ -77,6 +75,10 @@ class LaminaPrincipal extends JPanel {
 
 
 class LaminaSecundaria extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2384826861727769382L;
 	JLabel jl_test = new JLabel("Esquema de Detalle");
 	public LaminaSecundaria(){
 		add(jl_test);
