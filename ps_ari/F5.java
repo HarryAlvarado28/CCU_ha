@@ -1,4 +1,9 @@
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.GridLayout;
+
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -6,6 +11,11 @@ import javax.swing.JPanel;
  *
  */
 public class F5 extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8082522582528370899L;
 
 	/**
 	 * @param args
@@ -29,16 +39,42 @@ public class F5 extends JFrame{
 	public F5 (String title) {
 		super(title);
 		setVisible(true);
-		setBounds(100, 100, 350, 250);
-		add(new Lamina());
+		setBounds(100, 100, 750, 350);
+		add(new LaminaBase());
 		
 	}
-
-}
-
-class Lamina extends JPanel {
 	
-	public Lamina( ) {
+
+}
+
+class LaminaBase extends JPanel {
+	
 		
+	public LaminaBase() {
+		 setLayout(new GridLayout(2,1));
+		 add(new LaminaPrincipal());
+		 add(new LaminaSecundaria());
 	}
 }
+
+
+class LaminaPrincipal extends JPanel {
+	JLabel jl_test = new JLabel("Esquema Principal");
+	public LaminaPrincipal(){
+		add(jl_test);
+		setBackground(new Color(178,102,255));
+	}
+	
+}
+
+
+class LaminaSecundaria extends JPanel {
+	JLabel jl_test = new JLabel("Esquema de Detalle");
+	public LaminaSecundaria(){
+		add(jl_test);
+		setBackground(new Color(102, 255, 102));
+	}
+	
+}
+
+
