@@ -1,4 +1,3 @@
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.GridLayout;
 
@@ -50,6 +49,11 @@ public class F5 extends JFrame{
 class LaminaBase extends JPanel {
 	
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7610754683019905585L;
+
 	public LaminaBase() {
 		 setLayout(new GridLayout(2,1));
 		 add(new LaminaPrincipal());
@@ -59,6 +63,10 @@ class LaminaBase extends JPanel {
 
 
 class LaminaPrincipal extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3409061449977916970L;
 	JLabel jl_test = new JLabel("Esquema Principal");
 	public LaminaPrincipal(){
 		add(jl_test);
