@@ -13,6 +13,6 @@ public class LaminaPrincipal extends JPanel{
 	JLabel jl_test = new JLabel("Esquema Principal");
 	public LaminaPrincipal(){
 		add(jl_test);
-		setBackground(new Color(178,102,255));
+		setBackground(new Color(78,172,125));
 	}
 }
