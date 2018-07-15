@@ -28,10 +28,10 @@ public class F5 extends JFrame{
 	
 		Loshilos p1 = new Loshilos("*");
 		Loshilos p2 = new Loshilos("-");
-		Loshilos p3 = new Loshilos("+");
+		//Loshilos p3 = new Loshilos("+");
 		p1.start();
 		p2.start();
-		p3.start();
+		//p3.start();
 		
 	}
 	
@@ -42,7 +42,7 @@ public class F5 extends JFrame{
 		add(new LaminaBase());
 		try {
 			Thread.sleep(2);
-			setBounds(25, 100, 1000, 400);
+			setBounds(30, 100, 1000, 400);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,7 +59,12 @@ class LaminaBase extends JPanel {
 
 	public LaminaBase() {
 		setLayout(new GridLayout(2,1));
-		add(new LaminaPrincipal());
+		LaminaPrincipal lp = new LaminaPrincipal();
+		//Thread u = new Thread(lp);
+		//u.start();
+		add(lp);
+		//lp.start();
+		
 		add(new LaminaSecundaria());
 		
 	}
