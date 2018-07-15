@@ -1,9 +1,7 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -40,11 +38,11 @@ public class F5 extends JFrame{
 	public F5 (String title) {
 		super(title);
 		setVisible(true);
-		setBounds(100, 100, 850, 449);
+		setBounds(100, 100, 1000, 399);
 		add(new LaminaBase());
 		try {
 			Thread.sleep(2);
-			setBounds(100, 100, 750, 450);
+			setBounds(25, 100, 1000, 400);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -63,7 +61,7 @@ class LaminaBase extends JPanel {
 		setLayout(new GridLayout(2,1));
 		add(new LaminaPrincipal());
 		add(new LaminaSecundaria());
-		 
+		
 	}
 }
 
