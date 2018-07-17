@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
 /**
- * @author harry
+ * @author HarryAlvarado
  *
  */
 public class Loshilos extends Thread{
@@ -36,13 +36,12 @@ public class Loshilos extends Thread{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				g2d.drawImage(imgTrain1.getImage(), 330+i, 100, 80, 24, imgTrain1.getImageObserver());
+				g2d.drawImage(imgTrain1.getImage(), 330 + i, 100, 80, 24, imgTrain1.getImageObserver());
 			}
 			
 		} else {
-			//LaminaPrincipal pruebasdehiloenlp = new LaminaPrincipal();
-			//pruebasdehiloenlp.start_mio();
-			for (int i = 0; i < 50; i++) {
+
+			for (int i = 0; i < 150; i++) {
 				System.out.println();
 				try {
 					sleep(250);
@@ -52,7 +51,6 @@ public class Loshilos extends Thread{
 				}
 				System.out.print(symb+i);
 				
-				//System.out.println("desdehilos ::"+pruebasdehiloenlp.getTrenposition_x());
 			}
 
 		}

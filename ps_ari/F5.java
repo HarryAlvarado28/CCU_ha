@@ -31,14 +31,14 @@ public class F5 extends JFrame{
 		
 		p1.start();
 		p2.start();	
-		
 	}
 	
 	public F5 (String title) {
 		super(title);
 		setVisible(true);
 		setBounds(100, 100, 1000, 399);
-		add(new LaminaBase());
+		add(lb);
+		thread.start();
 		try {
 			Thread.sleep(2);
 			setBounds(30, 100, 1000, 400);
@@ -49,6 +49,31 @@ public class F5 extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	LaminaPrincipal lp = new LaminaPrincipal();
+	LaminaSecundaria ls = new LaminaSecundaria();
+	LaminaBase lb = new LaminaBase(lp,ls);
+	
+	Thread thread = new Thread(new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			for (int i = 0; i < 350; i++) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("asdf: "+lp.getTrenposition_x());
+				if (lp.getNumero_estacion() == 1) {
+					System.out.println("Estación UNOOOOOOOOOOOOOOOOO");
+				}else if (lp.getNumero_estacion() == 2) {
+					System.out.println("Estación DOOOOOSSSSSSSSSSSSS");
+				}
+			}
+		}
+	});
 }
 
 class LaminaBase extends JPanel {
@@ -68,7 +93,16 @@ class LaminaBase extends JPanel {
 		add(ls);
 
 	}
+	
+	public LaminaBase(LaminaPrincipal lp, LaminaSecundaria ls) {
+		setLayout(new GridLayout(2,1));
+		//LaminaPrincipal lp = new LaminaPrincipal();
+		add(lp);
+		lp.start_mio();
+		
+		//LaminaSecundaria ls = new LaminaSecundaria();
+		add(ls);
+	}
+	
 }
-
-
 

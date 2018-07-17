@@ -26,6 +26,8 @@ public class LaminaSecundaria extends JPanel {
 	private JButton jb_pause = new JButton("Pausar");
 	private JButton jb_stop = new JButton("Detener");
 	
+	//private Thread
+	
 	public LaminaSecundaria() {
 		// TODO Auto-generated constructor stub
 		setBackground(new Color(102, 255, 102));
@@ -52,5 +54,6 @@ public class LaminaSecundaria extends JPanel {
 		
 		return jp_details;
 	}
+	
 	
 }
