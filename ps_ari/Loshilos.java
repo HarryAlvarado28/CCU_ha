@@ -1,6 +1,4 @@
-import java.awt.Component;
 import java.awt.Graphics;
-import java.awt.image.ImageObserver;
 
 import javax.swing.ImageIcon;
 
@@ -42,6 +40,8 @@ public class Loshilos extends Thread{
 			}
 			
 		} else {
+			//LaminaPrincipal pruebasdehiloenlp = new LaminaPrincipal();
+			//pruebasdehiloenlp.start_mio();
 			for (int i = 0; i < 50; i++) {
 				System.out.println();
 				try {
@@ -51,6 +51,8 @@ public class Loshilos extends Thread{
 					e.printStackTrace();
 				}
 				System.out.print(symb+i);
+				
+				//System.out.println("desdehilos ::"+pruebasdehiloenlp.getTrenposition_x());
 			}
 
 		}

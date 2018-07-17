@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * @author harry
+ * @author HarryAlvarado
  *
  */
 public class F5 extends JFrame{
@@ -28,10 +28,9 @@ public class F5 extends JFrame{
 	
 		Loshilos p1 = new Loshilos("*");
 		Loshilos p2 = new Loshilos("-");
-		//Loshilos p3 = new Loshilos("+");
+		
 		p1.start();
-		p2.start();
-		//p3.start();
+		p2.start();	
 		
 	}
 	
@@ -47,6 +46,7 @@ public class F5 extends JFrame{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 }
@@ -60,13 +60,13 @@ class LaminaBase extends JPanel {
 	public LaminaBase() {
 		setLayout(new GridLayout(2,1));
 		LaminaPrincipal lp = new LaminaPrincipal();
-		//Thread u = new Thread(lp);
-		//u.start();
+
 		add(lp);
-		//lp.start();
+		lp.start_mio();
 		
-		add(new LaminaSecundaria());
-		
+		LaminaSecundaria ls = new LaminaSecundaria();
+		add(ls);
+
 	}
 }
 
