@@ -42,7 +42,6 @@ public class LaminaPrincipal extends JPanel {
 		g.drawImage(imgTrain1.getImage(), 130 + getTrenposition_x(), 100, 80, 24, this);
 	}
 	
-	
 	Runnable h1 = new Runnable() {
 		
 		@Override
@@ -51,7 +50,6 @@ public class LaminaPrincipal extends JPanel {
 			while(true) {
 				try {
 					Thread.sleep(100);
-					//repaint();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
