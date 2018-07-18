@@ -20,6 +20,7 @@ public class LaminaPrincipal extends JPanel {
 	public LaminaPrincipal(){
 		
 	}
+	
 	public void start_mio() {
 		if (hilo1 == null && hilo2 == null) {
 			hilo1 = new Thread(h1);
@@ -34,6 +35,13 @@ public class LaminaPrincipal extends JPanel {
 		ImageIcon imgBackground = new ImageIcon(getClass().getResource("background.jpg"));
 		g.drawImage(imgBackground.getImage(), 0, 0, 1000, 300, this);
 		
+		//add(jl_test);
+		//setBackground(new Color(78,172,125));
+		start();
+	}
+	
+	public void paint1 (Graphics g) {
+		//dibujemos(g);
 		ImageIcon imgRiel = new ImageIcon(getClass().getResource("rieles_n3.png"));
 		for (int i = 1; i < 31; i++) {
 			g.drawImage(imgRiel.getImage(), 30*i, 100, 40, 28, this);
@@ -49,6 +57,22 @@ public class LaminaPrincipal extends JPanel {
 		
 		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
 		g.drawImage(imgTrain1.getImage(), 20 + getTrenposition_x(), 100, 80, 24, this);
+	}
+	
+	public void update(Graphics g) {
+		trenposition_x =+ 2;
+		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
+		g.drawImage(imgTrain1.getImage(), 330+trenposition_x, 100, 80, 24, this);
+		
+	}
+	
+	
+
+	public void start() {
+		if (testing == null) {
+			testing = new Thread(this);
+			testing.start();
+		}
 	}
 	
 	Runnable h1 = new Runnable() {
