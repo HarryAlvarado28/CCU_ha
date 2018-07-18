@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class LaminaSecundaria extends JPanel {
@@ -19,6 +20,7 @@ public class LaminaSecundaria extends JPanel {
 	
 	private JPanel jp_details = new JPanel();
 	private JTextArea jta_resumentext = new JTextArea();
+	private JScrollPane jsp_scroll = new JScrollPane(jta_resumentext);
 	private JPanel jp_resumengrafic = new JPanel();
 	
 	private JPanel jp_allbutton = new JPanel();
@@ -47,13 +49,33 @@ public class LaminaSecundaria extends JPanel {
 	
 	private Component collectionResumen() {
 		jp_details.setLayout(new GridLayout(1, 2));
+		jta_resumentext.setEditable(false);;
+		thread.start();
 		
-		jp_details.add(jta_resumentext);
+		jp_details.add(jsp_scroll);
 		jp_details.add(jp_resumengrafic);
 		jp_resumengrafic.add(jl_test);
 		
 		return jp_details;
 	}
 	
+	Thread thread = new Thread(new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			for (int i = 0; i < 300; i++) {
+				try {
+					Thread.sleep(200);
+					jta_resumentext.setText("text: state of the processes :"+i+": log .... . ."+"\n"+jta_resumentext.getText());
+					
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}
+	});
 	
 }

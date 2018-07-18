@@ -31,6 +31,8 @@ public class LaminaPrincipal extends JPanel {
 	
 	@Override
 	public void paint (Graphics g) {
+		ImageIcon imgBackground = new ImageIcon(getClass().getResource("background.jpg"));
+		g.drawImage(imgBackground.getImage(), 0, 0, 1000, 300, this);
 		
 		ImageIcon imgRiel = new ImageIcon(getClass().getResource("rieles_n3.png"));
 		for (int i = 1; i < 31; i++) {
@@ -44,7 +46,7 @@ public class LaminaPrincipal extends JPanel {
 
 		//ImageIcon imgStation3 = new ImageIcon(getClass().getResource("estacion_n3.png"));
 		//g.drawImage(imgStation3.getImage(), 230, 50, 70, 50, this);
-
+		
 		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
 		g.drawImage(imgTrain1.getImage(), 20 + getTrenposition_x(), 100, 80, 24, this);
 	}
