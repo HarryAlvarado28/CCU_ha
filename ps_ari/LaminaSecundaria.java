@@ -29,6 +29,14 @@ public class LaminaSecundaria extends JPanel {
 //	private JButton jb_stop = new JButton("Detener");
 	
 	private String stateTren;
+	private Color resaltaBase = new Color(174, 214, 241);
+	private Color resaltaAlive = new Color(247, 220, 111);
+	private Color resaltaListo;
+	private Color resaltaEjecucion;
+	private Color resaltaBloqueado;
+	private Color resaltaLineaGo;
+	private Color resaltaLineFin;
+	
 	
 	public LaminaSecundaria() {
 		// TODO Auto-generated constructor stub
@@ -37,6 +45,7 @@ public class LaminaSecundaria extends JPanel {
 		
 		add(collectionResumen(),BorderLayout.CENTER);
 		add(collectionButton(),BorderLayout.SOUTH);
+		thread_inStateResalta.start();
 	}
 
 	private Component collectionButton() {
@@ -105,20 +114,22 @@ public class LaminaSecundaria extends JPanel {
 		
 	});
 	
+	//new Color(174, 214, 241) <----- Color Base.
+	
 	public void paint (Graphics g) {
 		super.paint(g);
 		
-		g.setColor(new Color(174, 214, 241 ));
+		g.setColor(getResaltaListo());
 		g.fillOval(570, 100, 50, 50);
 		g.setColor(new Color(0,0,0));
 		g.drawString("Listo", 580, 128);
 	
-		g.setColor(new Color(174, 214, 241 ));
+		g.setColor(getResaltaEjecucion());
 		g.fillOval(700, 32, 60, 60);
 		g.setColor(new Color(0,0,0));
 		g.drawString("Ejecucion", 703, 65);
 		
-		g.setColor(new Color(174, 214, 241 ));
+		g.setColor(getResaltaBloqueado());
 		g.fillOval(830, 110, 62, 62);
 		g.setColor(new Color(0,0,0));
 		g.drawString("Bloqueado", 831, 144);
@@ -143,6 +154,99 @@ public class LaminaSecundaria extends JPanel {
 		g.fillOval(849, 61, 5, 5);	
 		g.fillOval(828, 127, 5, 5);
 		
+		
+		if (getStateTren() == "Listo0") {
+			//jta_resumentext.setText((i+=1)+" Estado (que se simulado): "+getStateTren()+"\n"+"El Tren esta listo para empezar su marcha.");
+			
+			setResaltaListo(resaltaAlive);
+			setResaltaBloqueado(resaltaBase);
+			setResaltaEjecucion(resaltaBase);
+			
+		} else if (getStateTren() == "Listo") {
+			//jta_resumentext.setText((i+=1)+" Estado (que se simulado): "+getStateTren()+"\n"+ "El Tren esta listo para continuar su marcha, despues del intercambio de los pasajeros.");
+			
+			setResaltaListo(resaltaAlive);
+			setResaltaBloqueado(resaltaBase);
+			setResaltaEjecucion(resaltaBase);
+			
+		} else if (getStateTren() == "Bloqueado") {
+			//jta_resumentext.setText((i+=1)+" Estado (que se simulado): "+getStateTren()+"\n"+"El Tren ha llegado a la estación, y los usuarios están entrando o saliendo.");
+			setResaltaListo(resaltaBase);
+			setResaltaBloqueado(resaltaAlive);
+			setResaltaEjecucion(resaltaBase);
+		} else if (getStateTren() == "Ejecucion") {
+			//jta_resumentext.setText((i+=1)+" Estado (que se simulado): "+getStateTren()+"\n"+"El Tren esta en marcha");
+			setResaltaListo(resaltaBase);
+			setResaltaBloqueado(resaltaBase);
+			setResaltaEjecucion(resaltaAlive);
+		}else if (getStateTren() == "Terminado") {
+			//jta_resumentext.setText((i+=1)+" Estado (que se simulado): "+getStateTren()+"\n"+"El Tren a llegado a su destino final");
+			setResaltaListo(resaltaBase);
+			setResaltaBloqueado(resaltaBase);
+			setResaltaEjecucion(resaltaBase);
+			setResaltaLineFin(resaltaAlive);
+		}
+		
+		
+		
+	}
+	
+	Thread thread_inStateResalta = new Thread(new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			do {
+				try {
+					Thread.sleep(50);
+					repaint();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}while(getStateTren() != "Terminado");
+		}
+	});
+	
+	public Color getResaltaListo() {
+		return resaltaListo;
+	}
+
+	public void setResaltaListo(Color resaltaListo) {
+		this.resaltaListo = resaltaListo;
+	}
+
+	public Color getResaltaEjecucion() {
+		return resaltaEjecucion;
+	}
+
+	public void setResaltaEjecucion(Color resaltaEjecucion) {
+		this.resaltaEjecucion = resaltaEjecucion;
+	}
+
+	public Color getResaltaBloqueado() {
+		return resaltaBloqueado;
+	}
+
+	public void setResaltaBloqueado(Color resaltaBloqueado) {
+		this.resaltaBloqueado = resaltaBloqueado;
+	}
+
+	public Color getResaltaLineaGo() {
+		return resaltaLineaGo;
+	}
+
+	public void setResaltaLineaGo(Color resaltaLineaGo) {
+		this.resaltaLineaGo = resaltaLineaGo;
+	}
+
+	public Color getResaltaLineFin() {
+		return resaltaLineFin;
+	}
+
+	public void setResaltaLineFin(Color resaltaLineFin) {
+		this.resaltaLineFin = resaltaLineFin;
 	}
 	
 }

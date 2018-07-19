@@ -77,7 +77,6 @@ public class LaminaPrincipal extends JPanel {
 						setStateTren("Bloqueado");
 						Thread.sleep(3000);
 						setStateTren("Listo");
-						System.out.println("asdfasdfaeqfwervfqwerqwevtw");
 						Thread.sleep(3000);
 					}else if (getNumero_estacion() == 2) {
 						setStateTren("Bloqueado");
