@@ -3,7 +3,7 @@
  */
 
 /**
- * @author harry
+ * @author HarryAlvarado
  *
  */
 public class L6R {

@@ -1,9 +1,9 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -16,7 +16,7 @@ public class LaminaSecundaria extends JPanel {
 	 */
 	private static final long serialVersionUID = 2384826861727769382L;
 	
-	private JLabel jl_test = new JLabel("Esquema de Detalle");
+	private JLabel jl_test = new JLabel("Detalle Gráfico");
 	
 	private JPanel jp_details = new JPanel();
 	private JTextArea jta_resumentext = new JTextArea();
@@ -24,9 +24,9 @@ public class LaminaSecundaria extends JPanel {
 	private JPanel jp_resumengrafic = new JPanel();
 	
 	private JPanel jp_allbutton = new JPanel();
-	private JButton jb_start_restart = new JButton("Iniciar");
-	private JButton jb_pause = new JButton("Pausar");
-	private JButton jb_stop = new JButton("Detener");
+//	private JButton jb_start_restart = new JButton("Iniciar");
+//	private JButton jb_pause = new JButton("Pausar");
+//	private JButton jb_stop = new JButton("Detener");
 	
 	private String stateTren;
 	
@@ -40,9 +40,9 @@ public class LaminaSecundaria extends JPanel {
 	}
 
 	private Component collectionButton() {
-		jp_allbutton.add(jb_start_restart);
-		jp_allbutton.add(jb_pause);
-		jp_allbutton.add(jb_stop);
+//		jp_allbutton.add(jb_start_restart);
+//		jp_allbutton.add(jb_pause);
+//		jp_allbutton.add(jb_stop);
 		
 		return jp_allbutton;
 	}
@@ -104,6 +104,26 @@ public class LaminaSecundaria extends JPanel {
 		}
 		
 	});
+	
+	public void paint (Graphics g) {
+		super.paint(g);
+		
+		g.setColor(new Color(200,5,5));
+		g.fillOval(570, 100, 50, 50);
+		g.setColor(new Color(0,0,0));
+		g.drawString("Listo", 580, 128);
+	
+		g.setColor(new Color(5,200,5));
+		g.fillOval(700, 32, 60, 60);
+		g.setColor(new Color(0,0,0));
+		g.drawString("Ejecucion", 703, 65);
+		
+		g.setColor(new Color(5,115,250));
+		g.fillOval(830, 110, 62, 62);
+		g.setColor(new Color(0,0,0));
+		g.drawString("Bloqueado", 831, 144);
+		
+	}
 	
 	
 //	String Listo0 = "El Tren esta listo para empezar su marcha.";
