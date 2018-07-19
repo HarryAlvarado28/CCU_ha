@@ -37,7 +37,6 @@ public class LaminaPrincipal extends JPanel {
 		
 		//add(jl_test);
 		//setBackground(new Color(78,172,125));
-		start();
 	}
 	
 	public void paint1 (Graphics g) {
@@ -68,12 +67,6 @@ public class LaminaPrincipal extends JPanel {
 	
 	
 
-	public void start() {
-		if (testing == null) {
-			testing = new Thread(this);
-			testing.start();
-		}
-	}
 	
 	Runnable h1 = new Runnable() {
 		 
