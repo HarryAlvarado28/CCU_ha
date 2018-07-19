@@ -41,3 +41,8 @@ _Consiste en especificar una ruta y un valor numérico._
 * **FUN**> Sera la ruta del archivo o directorio que se utilizara para realizar el respaldo o copia.
 
 * **Tiempo**> Es el tiempo que se utilizara para realizar la copia, el valor predeterminado es 60 segundos.
+
+## Simulador - Estado de los Procesos
+Elabore un programa, en un lenguaje de programación conocido, que simule los tres (3) Estados de los Procesos, en las cinco (5) transiciones de los procesos. (ver el documento de clase).
+
+<img align="center" width="650px" height="250px" src="https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud3/na7/modelo_5_estados.png">

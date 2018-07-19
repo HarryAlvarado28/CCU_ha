@@ -16,7 +16,7 @@ public class LaminaSecundaria extends JPanel {
 	 */
 	private static final long serialVersionUID = 2384826861727769382L;
 	
-	private JLabel jl_test = new JLabel("Detalle Gráfico");
+	private JLabel jl_test = new JLabel("Detalle Grï¿½fico");
 	
 	private JPanel jp_details = new JPanel();
 	private JTextPane jta_resumentext = new JTextPane();
@@ -97,7 +97,7 @@ public class LaminaSecundaria extends JPanel {
 						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+ "El Tren esta listo para continuar su marcha, despues del intercambio de los pasajeros.");
 		
 					} else if (getStateTren() == LaminaPrincipal.BLOQUEADO) {
-						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren ha llegado a la estación, y los usuarios están entrando o saliendo.");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren ha llegado a la estaciï¿½n, y los usuarios estï¿½n entrando o saliendo.");
 						
 					} else if (getStateTren() == LaminaPrincipal.EJECUCION) {
 						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren esta en marcha");
@@ -156,7 +156,7 @@ public class LaminaSecundaria extends JPanel {
 		g.fillOval(565, 125, 5, 5); // to Listo
 		g.fillOval(600, 100, 5, 5); // from Ejecucion to Listo
 		g.fillOval(705, 80, 5, 5); // from Listo to Ejecucion
-		g.fillOval(825, 140, 5, 5); // from Listo to Bloqueado
+		g.fillOval(625, 130, 5, 5); // from Listo to Bloqueado
 		g.fillOval(849, 61, 5, 5);	 // from Ejecucion to Terminado
 		g.fillOval(828, 127, 5, 5); // from Ejecucion to Bloqueado
 		
