@@ -88,22 +88,14 @@ class LaminaBase extends JPanel {
 	private static final long serialVersionUID = 7610754683019905585L;
 
 	public LaminaBase() {
-//		setLayout(new GridLayout(2,1));
-//		LaminaPrincipal lp = new LaminaPrincipal();
-//		add(lp);
-//		lp.start_mio();
-//		LaminaSecundaria ls = new LaminaSecundaria();
-//		add(ls);
+
 	}
 	
 	public LaminaBase(LaminaPrincipal lp, LaminaSecundaria ls) {
 		setLayout(new GridLayout(2,1));
-		//LaminaPrincipal lp = new LaminaPrincipal();
-		
 		add(lp);
 		lp.start_mio();
 		add(ls);
-		//LaminaSecundaria ls = new LaminaSecundaria();	
 	}
 	
 }

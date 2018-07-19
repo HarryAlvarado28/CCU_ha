@@ -51,8 +51,6 @@ public class LaminaPrincipal extends JPanel {
 		g.drawImage(imgStation2.getImage(), stationN2, 50, 70, 50, this);
 		g.drawImage(imgStation2.getImage(), stationN3, 50, 70, 50, this);
 
-		//ImageIcon imgStation3 = new ImageIcon(getClass().getResource("estacion_n3.png"));
-		//g.drawImage(imgStation3.getImage(), 230, 50, 70, 50, this);
 		
 		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
 		g.drawImage(imgTrain1.getImage(), 20 + getTrenposition_x(), 100, 80, 24, this);
