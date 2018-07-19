@@ -9,13 +9,19 @@ public class LaminaPrincipal extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 6164276679171436929L;
+	
+	final public int stationInicio = 2;
+	final public int stationN1 = 230;
+	final public int stationN2 = 500;
+	final public int stationN3 = 750;
+	final public int stationFinal = 850;
+	
 	private int trenposition_x;
 	private Thread hilo1 = null;
 	private Thread hilo2 = null;
-	final private int ps_n1 = 230;
-	final private int ps_n2 = 500;
-	final private int ps_n3 = 750;
 	private int numero_estacion = -1;
+	private String stateTren;
+	
 	
 	public LaminaPrincipal(){
 		
@@ -41,9 +47,9 @@ public class LaminaPrincipal extends JPanel {
 		}
 		
 		ImageIcon imgStation2 = new ImageIcon(getClass().getResource("estacion_n2.png"));
-		g.drawImage(imgStation2.getImage(), ps_n1, 50, 70, 50, this);
-		g.drawImage(imgStation2.getImage(), ps_n2, 50, 70, 50, this);
-		g.drawImage(imgStation2.getImage(), ps_n3, 50, 70, 50, this);
+		g.drawImage(imgStation2.getImage(), stationN1, 50, 70, 50, this);
+		g.drawImage(imgStation2.getImage(), stationN2, 50, 70, 50, this);
+		g.drawImage(imgStation2.getImage(), stationN3, 50, 70, 50, this);
 
 		//ImageIcon imgStation3 = new ImageIcon(getClass().getResource("estacion_n3.png"));
 		//g.drawImage(imgStation3.getImage(), 230, 50, 70, 50, this);
@@ -51,50 +57,52 @@ public class LaminaPrincipal extends JPanel {
 		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
 		g.drawImage(imgTrain1.getImage(), 20 + getTrenposition_x(), 100, 80, 24, this);
 	}
-	
-//	public void update(Graphics g) {
-//		trenposition_x =+ 2;
-//		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
-//		g.drawImage(imgTrain1.getImage(), 330+getTrenposition_x(), 100, 80, 24, this);
-//		
-//	}
 		
 	Runnable h1 = new Runnable() {
 		 
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			while(true && getTrenposition_x() < 825) {
+			while(getTrenposition_x() <= stationFinal) {
 				try {
-					Thread.sleep(100);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				try {
-					if (getNumero_estacion() == 1) {
-							Thread.sleep(3000);
-							// TODO Auto-generated catch block
-					}else if(getNumero_estacion() == 2) {
+					// TODO Auto-generated catch block
+					if (stationInicio == getTrenposition_x()) {
+						setStateTren("Listo0");
+						Thread.sleep(3000);
+					}else if (getNumero_estacion() == 1) {
+						setStateTren("Bloqueado");
+						Thread.sleep(3000);
+						setStateTren("Listo");
+						System.out.println("asdfasdfaeqfwervfqwerqwevtw");
+						Thread.sleep(3000);
+					}else if (getNumero_estacion() == 2) {
+						setStateTren("Bloqueado");
+						Thread.sleep(3000);
+						setStateTren("Listo");
 						Thread.sleep(3000);
 					}else if (getNumero_estacion() == 3) {
+						setStateTren("Bloqueado");
+						Thread.sleep(3000);
+						setStateTren("Listo");
 						Thread.sleep(3000);
 					}else {
-						
+						setStateTren("Ejecucion");
 					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				runtren();
+				progresiveTrenposition_x();
 				repaint();
-				//System.out.println("desdelaminaprincipal hilo::: "+getTrenposition_x());
 			}
+			setStateTren("Terminado");
 		}
 	};
-	
-	public synchronized void runtren() {
-		progresiveTrenposition_x();
-	}
 	
 	Runnable h2 = new Runnable() {
 		
@@ -108,15 +116,18 @@ public class LaminaPrincipal extends JPanel {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("In position:"+getTrenposition_x());
-				switch (getDetectPositionTren(getTrenposition_x())) {
-				case ps_n1:
+				//System.out.println("In po:"+(getTrenposition_x()));
+				switch (getDetectPositionTren(getTrenposition_x()+20)) {
+				case stationInicio:
+					setStateTren("Listo");
+					break;
+				case stationN1:
 					setNumero_estacion(1);
 					break;
-				case ps_n2:
+				case stationN2:
 					setNumero_estacion(2);
 					break;
-				case ps_n3:
+				case stationN3:
 					setNumero_estacion(3);
 					break;
 				default:
@@ -126,13 +137,17 @@ public class LaminaPrincipal extends JPanel {
 			}
 		}
 		
-		private int getDetectPositionTren(int positionStation ) {
+		private int getDetectPositionTren(int positionStation) {
 			if (positionStation > 229 && 231 > positionStation) {
-				return ps_n1;
+				return stationN1; 
 			} else if (positionStation > 499 && 501 > positionStation) {
-				return ps_n2;
+				return stationN2;
 			} else if (positionStation > 749 && 751 > positionStation) {
-				return ps_n3;
+				return stationN3;
+			}else if (positionStation == stationInicio) {
+				return stationInicio;
+			}else if (positionStation == stationFinal) {
+				return stationFinal;
 			}else {
 				return 0;
 			}
@@ -167,5 +182,19 @@ public class LaminaPrincipal extends JPanel {
 	 */
 	public void setNumero_estacion(int numero_estacion) {
 		this.numero_estacion = numero_estacion;
+	}
+
+	/**
+	 * @return the stateTren
+	 */
+	public String getStateTren() {
+		return stateTren;
+	}
+
+	/**
+	 * @param stateTren the stateTren to set
+	 */
+	public void setStateTren(String stateTren) {
+		this.stateTren = stateTren;
 	}
 }

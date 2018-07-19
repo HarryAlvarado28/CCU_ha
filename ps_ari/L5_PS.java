@@ -58,18 +58,22 @@ public class L5_PS extends JFrame{
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			for (int i = 0; i < 350; i++) {
+			while (true) {
 				try {
-					Thread.sleep(50);
+					Thread.sleep(25);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("positiontren: "+lp.getTrenposition_x());
+				ls.setStateTren(lp.getStateTren());
+				//System.out.println("positiontren: "+lp.getTrenposition_x());
+				System.out.println(lp.getStateTren());
 				if (lp.getNumero_estacion() == 1) {
 					System.out.println("Estación UNOOOOOOOOOOOOOOOOO");
 				}else if (lp.getNumero_estacion() == 2) {
 					System.out.println("Estación DOOOOOSSSSSSSSSSSSS");
+				}else if (lp.getNumero_estacion() == 3) {
+					System.out.println("Estación TREEEESSSSSSSSSSSSS");
 				}
 			}
 		}
