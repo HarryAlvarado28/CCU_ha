@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="ps_ari"/>
+	<classpathentry kind="src" path="L5_EstadosProcesos"/>
 	<classpathentry kind="src" path="L6Roubin">
 		<attributes>
 			<attribute name="ignore_optional_problems" value="true"/>

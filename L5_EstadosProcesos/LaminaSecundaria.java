@@ -91,19 +91,19 @@ public class LaminaSecundaria extends JPanel {
 					Thread.sleep(50);
 					
 					if (getStateTren() == LaminaPrincipal.LISTO0) {
-						jta_resumentext.setText(" Estado: "+getStateTren()+"\n"+"El Tren esta listo para empezar su marcha.");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren esta listo para empezar su marcha.");
 						
 					} else if (getStateTren() == LaminaPrincipal.LISTO) {
-						jta_resumentext.setText(" Estado: "+getStateTren()+"\n"+ "El Tren esta listo para continuar su marcha, despues del intercambio de los pasajeros.");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+ "El Tren esta listo para continuar su marcha, despues del intercambio de los pasajeros.");
 		
 					} else if (getStateTren() == LaminaPrincipal.BLOQUEADO) {
-						jta_resumentext.setText(" Estado: "+getStateTren()+"\n"+"El Tren ha llegado a la estación, y los usuarios están entrando o saliendo.");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren ha llegado a la estación, y los usuarios están entrando o saliendo.");
 						
 					} else if (getStateTren() == LaminaPrincipal.EJECUCION) {
-						jta_resumentext.setText(" Estado: "+getStateTren()+"\n"+"El Tren esta en marcha");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren esta en marcha");
 						
 					}else if (getStateTren() == LaminaPrincipal.TERMINADO) {
-						jta_resumentext.setText(" Estado: "+getStateTren()+"\n"+"El Tren a llegado a su destino final");
+						jta_resumentext.setText("	Estado: "+getStateTren()+"\n"+"El Tren a llegado a su destino final");
 						
 					}
 					jta_resumentext.setFont(new Font(Font.SANS_SERIF, Font.ITALIC, 20));
