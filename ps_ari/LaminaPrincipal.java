@@ -35,12 +35,6 @@ public class LaminaPrincipal extends JPanel {
 		ImageIcon imgBackground = new ImageIcon(getClass().getResource("background.jpg"));
 		g.drawImage(imgBackground.getImage(), 0, 0, 1000, 300, this);
 		
-		//add(jl_test);
-		//setBackground(new Color(78,172,125));
-	}
-	
-	public void paint1 (Graphics g) {
-		//dibujemos(g);
 		ImageIcon imgRiel = new ImageIcon(getClass().getResource("rieles_n3.png"));
 		for (int i = 1; i < 31; i++) {
 			g.drawImage(imgRiel.getImage(), 30*i, 100, 40, 28, this);
@@ -58,26 +52,37 @@ public class LaminaPrincipal extends JPanel {
 		g.drawImage(imgTrain1.getImage(), 20 + getTrenposition_x(), 100, 80, 24, this);
 	}
 	
-	public void update(Graphics g) {
-		trenposition_x =+ 2;
-		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
-		g.drawImage(imgTrain1.getImage(), 330+trenposition_x, 100, 80, 24, this);
+//	public void update(Graphics g) {
+//		trenposition_x =+ 2;
+//		ImageIcon imgTrain1 = new ImageIcon(getClass().getResource("train_n2_2.png"));
+//		g.drawImage(imgTrain1.getImage(), 330+getTrenposition_x(), 100, 80, 24, this);
+//		
+//	}
 		
-	}
-	
-	
-
-	
 	Runnable h1 = new Runnable() {
 		 
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			while(true && getTrenposition_x() < 900) {
+			while(true && getTrenposition_x() < 825) {
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					if (getNumero_estacion() == 1) {
+							Thread.sleep(3000);
+							// TODO Auto-generated catch block
+					}else if(getNumero_estacion() == 2) {
+						Thread.sleep(3000);
+					}else if (getNumero_estacion() == 3) {
+						Thread.sleep(3000);
+					}else {
+						
+					}
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 				runtren();
@@ -97,7 +102,14 @@ public class LaminaPrincipal extends JPanel {
 		public void run() {
 			// TODO Auto-generated method stub
 			while (true) {
-				switch (getTrenposition_x()) {
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("In position:"+getTrenposition_x());
+				switch (getDetectPositionTren(getTrenposition_x())) {
 				case ps_n1:
 					setNumero_estacion(1);
 					break;
@@ -108,9 +120,21 @@ public class LaminaPrincipal extends JPanel {
 					setNumero_estacion(3);
 					break;
 				default:
-					setNumero_estacion(0);
+					setNumero_estacion(1428);
 					break;
 				}
+			}
+		}
+		
+		private int getDetectPositionTren(int positionStation ) {
+			if (positionStation > 229 && 231 > positionStation) {
+				return ps_n1;
+			} else if (positionStation > 499 && 501 > positionStation) {
+				return ps_n2;
+			} else if (positionStation > 749 && 751 > positionStation) {
+				return ps_n3;
+			}else {
+				return 0;
 			}
 		}
 	};

@@ -8,7 +8,7 @@ import javax.swing.JPanel;
  * @author HarryAlvarado
  *
  */
-public class F5 extends JFrame{
+public class L5_PS extends JFrame{
 
 	/**
 	 * 
@@ -24,21 +24,21 @@ public class F5 extends JFrame{
 		System.out.println("¿Qué haces?, "+var1);
 		
 		@SuppressWarnings("unused")
-		F5 l = new F5("Harry");
+		L5_PS l = new L5_PS("Harry");
 	
-		Loshilos p1 = new Loshilos("*");
-		Loshilos p2 = new Loshilos("-");
-		
-		p1.start();
-		p2.start();	
+//		Loshilos p1 = new Loshilos("*");
+//		Loshilos p2 = new Loshilos("-");
+//		
+//		p1.start();
+//		p2.start();	
 	}
 	
-	public F5 (String title) {
+	public L5_PS (String title) {
 		super(title);
 		setVisible(true);
 		setBounds(100, 100, 1000, 399);
 		add(lb);
-		thread.start();
+		thread_1.start();
 		try {
 			Thread.sleep(2);
 			setBounds(30, 100, 1000, 400);
@@ -53,19 +53,19 @@ public class F5 extends JFrame{
 	LaminaSecundaria ls = new LaminaSecundaria();
 	LaminaBase lb = new LaminaBase(lp,ls);
 	
-	Thread thread = new Thread(new Runnable() {
+	Thread thread_1 = new Thread(new Runnable() {
 		
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
 			for (int i = 0; i < 350; i++) {
 				try {
-					Thread.sleep(100);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("asdf: "+lp.getTrenposition_x());
+				System.out.println("positiontren: "+lp.getTrenposition_x());
 				if (lp.getNumero_estacion() == 1) {
 					System.out.println("Estaci�n UNOOOOOOOOOOOOOOOOO");
 				}else if (lp.getNumero_estacion() == 2) {
@@ -74,6 +74,7 @@ public class F5 extends JFrame{
 			}
 		}
 	});
+	
 }
 
 class LaminaBase extends JPanel {
