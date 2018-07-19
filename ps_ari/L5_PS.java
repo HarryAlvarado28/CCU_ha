@@ -26,11 +26,6 @@ public class L5_PS extends JFrame{
 		@SuppressWarnings("unused")
 		L5_PS l = new L5_PS("Harry");
 	
-//		Loshilos p1 = new Loshilos("*");
-//		Loshilos p2 = new Loshilos("-");
-//		
-//		p1.start();
-//		p2.start();	
 	}
 	
 	public L5_PS (String title) {
@@ -66,15 +61,7 @@ public class L5_PS extends JFrame{
 					e.printStackTrace();
 				}
 				ls.setStateTren(lp.getStateTren());
-				//System.out.println("positiontren: "+lp.getTrenposition_x());
-				System.out.println(lp.getStateTren());
-				if (lp.getNumero_estacion() == 1) {
-					System.out.println("Estación UNOOOOOOOOOOOOOOOOO");
-				}else if (lp.getNumero_estacion() == 2) {
-					System.out.println("Estación DOOOOOSSSSSSSSSSSSS");
-				}else if (lp.getNumero_estacion() == 3) {
-					System.out.println("Estación TREEEESSSSSSSSSSSSS");
-				}
+
 			}
 		}
 	});

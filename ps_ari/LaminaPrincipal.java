@@ -10,11 +10,18 @@ public class LaminaPrincipal extends JPanel {
 	 */
 	private static final long serialVersionUID = 6164276679171436929L;
 	
-	final public int stationInicio = 2;
-	final public int stationN1 = 230;
-	final public int stationN2 = 500;
-	final public int stationN3 = 750;
-	final public int stationFinal = 850;
+	static final public String LISTO0 = "LISTO0";
+	static final public String LISTO = "LISTO";
+	static final public String EJECUCION = "EJECUCION";
+	static final public String BLOQUEADO = "BLOQUEADO";
+	static final public String TERMINADO = "TERMINADO";
+	
+	
+	static final public int stationInicio = 2;
+	static final public int stationN1 = 230;
+	static final public int stationN2 = 500;
+	static final public int stationN3 = 750;
+	static final public int stationFinal = 850;
 	
 	private int trenposition_x;
 	private Thread hilo1 = null;
@@ -22,9 +29,10 @@ public class LaminaPrincipal extends JPanel {
 	private int numero_estacion = -1;
 	private String stateTren;
 	
+	private int stop_random;
 	
 	public LaminaPrincipal(){
-		
+		thread_stop_random.start();
 	}
 	
 	public void start_mio() {
@@ -71,25 +79,28 @@ public class LaminaPrincipal extends JPanel {
 				try {
 					// TODO Auto-generated catch block
 					if (stationInicio == getTrenposition_x()) {
-						setStateTren("Listo0");
+						setStateTren(LaminaPrincipal.LISTO0);
 						Thread.sleep(3000);
 					}else if (getNumero_estacion() == 1) {
-						setStateTren("Bloqueado");
+						setStateTren(LaminaPrincipal.BLOQUEADO);
 						Thread.sleep(3000);
-						setStateTren("Listo");
+						setStateTren(LaminaPrincipal.LISTO);
 						Thread.sleep(3000);
 					}else if (getNumero_estacion() == 2) {
-						setStateTren("Bloqueado");
+						setStateTren(LaminaPrincipal.BLOQUEADO);
 						Thread.sleep(3000);
-						setStateTren("Listo");
+						setStateTren(LaminaPrincipal.LISTO);
 						Thread.sleep(3000);
 					}else if (getNumero_estacion() == 3) {
-						setStateTren("Bloqueado");
+						setStateTren(LaminaPrincipal.BLOQUEADO);
 						Thread.sleep(3000);
-						setStateTren("Listo");
+						setStateTren(LaminaPrincipal.LISTO);
 						Thread.sleep(3000);
+					}else if(getTrenposition_x() == getStop_random()) {
+						setStateTren(LaminaPrincipal.LISTO);
+						Thread.sleep(4000);
 					}else {
-						setStateTren("Ejecucion");
+						setStateTren(LaminaPrincipal.EJECUCION);
 					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -97,7 +108,7 @@ public class LaminaPrincipal extends JPanel {
 				progresiveTrenposition_x();
 				repaint();
 			}
-			setStateTren("Terminado");
+			setStateTren(LaminaPrincipal.TERMINADO);
 		}
 	};
 	
@@ -116,7 +127,7 @@ public class LaminaPrincipal extends JPanel {
 				//System.out.println("In po:"+(getTrenposition_x()));
 				switch (getDetectPositionTren(getTrenposition_x()+20)) {
 				case stationInicio:
-					setStateTren("Listo");
+					setStateTren(LaminaPrincipal.LISTO);
 					break;
 				case stationN1:
 					setNumero_estacion(1);
@@ -150,6 +161,21 @@ public class LaminaPrincipal extends JPanel {
 			}
 		}
 	};
+	
+	Thread thread_stop_random = new Thread(new Runnable() {
+		public void run() {
+			for (int i = 0; i < 2; i++) {
+				setStop_random((int) (Math.random()*1000));
+				try {
+					Thread.sleep(15000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	});
+	
 	
 	/**
 	 * @return the trenposition_x
@@ -193,5 +219,19 @@ public class LaminaPrincipal extends JPanel {
 	 */
 	public void setStateTren(String stateTren) {
 		this.stateTren = stateTren;
+	}
+
+	/**
+	 * @return the stop_random
+	 */
+	public int getStop_random() {
+		return stop_random;
+	}
+
+	/**
+	 * @param stop_random the stop_random to set
+	 */
+	public void setStop_random(int stop_random) {
+		this.stop_random = stop_random;
 	}
 }
