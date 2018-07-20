@@ -24,7 +24,7 @@ public class L5_PS extends JFrame{
 		System.out.println("¿Qué haces?, "+var1);
 		
 		@SuppressWarnings("unused")
-		L5_PS l = new L5_PS("Harry");
+		L5_PS l = new L5_PS("Arianna");
 	
 	}
 	

@@ -16,7 +16,7 @@ public class LaminaSecundaria extends JPanel {
 	 */
 	private static final long serialVersionUID = 2384826861727769382L;
 	
-	private JLabel jl_test = new JLabel("Detalle Gr�fico");
+	private JLabel jl_test = new JLabel("Detalle Gráfico");
 	
 	private JPanel jp_details = new JPanel();
 	private JTextPane jta_resumentext = new JTextPane();
