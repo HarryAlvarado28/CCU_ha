@@ -1,0 +1,38 @@
+.org 1000h
+
+		MVI	A,07H
+		STA	3000H
+
+		MVI	A,02H
+		STA	3001H
+
+		MVI	A,01H
+		STA	3002H
+
+		MVI	A,01H
+		STA	3003H
+
+		MVI	A,01H
+		STA	3004H
+
+		MVI	A,01H
+		STA	3005H
+
+		MVI	A,01H
+		STA	3006H
+
+		MVI	A,01H
+		STA	3007H
+		
+		LXI	H,3000H
+		MOV	C,M
+		MOV	E,C
+		INX	H
+		MOV	A,M
+LOOP:		INX	H
+		MOV	B,M
+		ADD	B
+		DCR	E
+		JNZ	LOOP
+		MOV	M,A
+		HLT
