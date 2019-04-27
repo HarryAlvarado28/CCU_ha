@@ -11,7 +11,9 @@ def s4(cadena, posicion):
         elif cadena[posicion] == "b":
             return s4(cadena, posicion)
         else:
-            return print("¡Se a encontrado uno o más Simbolos No Validos!")
+            print("¡Se a encontrado uno o más Simbolos No Validos!")
+            return s0(cadena[posicion+1:])
+            # return print("¡Se a encontrado uno o más Simbolos No Validos!")
     else:
         print("¡[ESTADO 4] cadena [", cadena, "] NO es ACEPTADA!")
         return
@@ -26,7 +28,9 @@ def s1(cadena, posicion):
         elif cadena[posicion] == "b":
             return s2(cadena, posicion)
         else:
-            return print("¡Se a encontrado uno o más Simbolos No Validos!")
+            print("¡Se a encontrado uno o más Simbolos No Validos!")
+            return s0(cadena[posicion+1:])
+            # return print("¡Se a encontrado uno o más Simbolos No Validos!")
     else:
         print("¡[ESTADO 1] cadena [", cadena, "] NO es ACEPTADA!")
         return
@@ -41,7 +45,8 @@ def s2(cadena, posicion):
         elif cadena[posicion] == "b":
             return s3(cadena, posicion)
         else:
-            return print("¡Se a encontrado uno o más Simbolos No Validos!")
+            print("¡Se a encontrado uno o más Simbolos No Validos!")
+            return s0(cadena[posicion+1:])
     else:
         print("¡[ESTADO 2] cadena [", cadena, "] NO es ACEPTADA!")
         return
