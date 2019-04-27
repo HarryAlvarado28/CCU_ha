@@ -1,4 +1,4 @@
-# CCU ha (Colección de Código Universitario Harry)
+# CCU ha (Colección de Código Universitario Harry) :pencil2: :books:
 
 Consiste básicamente en colocar las practicas que he estado desarrollado en los cursos de la universidad.
 
@@ -46,3 +46,43 @@ _Consiste en especificar una ruta y un valor numérico._
 Elabore un programa, en un lenguaje de programación conocido, que simule los tres (3) Estados de los Procesos, en las cinco (5) transiciones de los procesos. (ver el documento de clase).
 
 <img align="center" width="650px" height="250px" src="https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud3/na7/modelo_5_estados.png">
+
+## Expresión Regular - Solving.py
+Consiste en desarrollar un algoritmo capas de cumplir las reglas del siguiente diagrama 
+![Diagrama](https://github.com/HarryAlvarado28/CCU_ha/blob/master/img/pdc.jpeg)
+El algoritmo llamado **solving.py** resuelve el ejercicio, he aqui un ejemplo del resultado.
+````console
+hky:CCU_ha harry$ python3 solving.py 
+Dime una cadena: ababbbaabbabba          
+-------------------------------------
+Cadena Base: [ ababbbaabbabba ] tamaño: [ 14 ]
+Estado Inicial, el primer simbolo es:  a
+Estado 1
+Estado 2
+Estado 1
+Estado 2
+Estado 3
+¡La cadena [ ababb ] es ACEPTADA!
+-------------------------------------
+-> Siguiente Cadena: [ baabbabba ] tamaño: [ 9 ]
+Estado Inicial, el primer simbolo es:  b
+Estado 4
+Estado 1
+Estado 1
+Estado 2
+Estado 3
+¡La cadena [ baabb ] es ACEPTADA!
+-------------------------------------
+-> Siguiente Cadena: [ abba ] tamaño: [ 4 ]
+Estado Inicial, el primer simbolo es:  a
+Estado 1
+Estado 2
+Estado 3
+¡La cadena [ abb ] es ACEPTADA!
+-------------------------------------
+-> Siguiente Cadena: [ a ] tamaño: [ 1 ]
+Estado Inicial, el primer simbolo es:  a
+Estado 1
+¡[ESTADO 1] cadena [ a ] NO es ACEPTADA!
+hky:CCU_ha harry$
+````
