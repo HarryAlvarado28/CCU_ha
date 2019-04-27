@@ -49,7 +49,7 @@ Elabore un programa, en un lenguaje de programación conocido, que simule los tr
 
 ## Expresión Regular - Solving.py
 Consiste en desarrollar un algoritmo capas de cumplir las reglas del siguiente diagrama 
-![Diagrama](https://github.com/HarryAlvarado28/CCU_ha/blob/master/img/pdc.jpeg)
+![Diagrama](https://github.com/HarryAlvarado28/CCU_ha/blob/master/img/pdc.png)
 El algoritmo llamado **solving.py** resuelve el ejercicio, he aqui un ejemplo del resultado.
 ````console
 hky:CCU_ha harry$ python3 solving.py 
