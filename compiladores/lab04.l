@@ -21,6 +21,7 @@ constEntera     {digito}({digito})*
 "**"            {return (POT);}
 {identificador} {return (IDENTIFICADOR);}
 "print("        {return (PRI);}
+"leer("         {return (LEE);}
 "("             {return (APAR);}
 ")"             {return (CPAR);}
 "{"             {return (COR);}

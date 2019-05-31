@@ -2,7 +2,7 @@
 /* fichero instrucciones.y */
 #include <stdio.h>
 %}
-%token IDENTIFICADOR NL OPAS CONSTENTERA MAS MEN PROD POT APAR CPAR COR CORC PRI
+%token IDENTIFICADOR NL OPAS CONSTENTERA MAS MEN PROD POT APAR CPAR COR CORC PRI LEE
 %start instrucciones
 %%
 instrucciones : instrucciones instruccion
@@ -12,6 +12,7 @@ loquesea : expresion
          | termino
          ;
 instruccion : PRI loquesea CPAR NL
+            | LEE loquesea CPAR NL
             ;
 expresion : termino
           | expresion MAS termino
