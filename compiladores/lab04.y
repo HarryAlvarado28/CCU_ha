@@ -2,7 +2,7 @@
 /* fichero instrucciones.y */
 #include <stdio.h>
 %}
-%token IDENTIFICADOR NL OPAS CONSTENTERA MAS MEN PROD POT APAR CPAR COR CORC PRI LEE
+%token IDENTIFICADOR NL OPAS CONSTENTERA CONSTDECIMAL MAS MEN PROD POT APAR CPAR COR CORC PRI LEE COMO COMC
 %start instrucciones
 %%
 instrucciones : instrucciones instruccion
@@ -13,6 +13,7 @@ loquesea : expresion
          ;
 instruccion : PRI loquesea CPAR NL
             | LEE loquesea CPAR NL
+            | COMO loquesea COMC NL
             ;
 expresion : termino
           | expresion MAS termino
@@ -22,15 +23,20 @@ expresion : termino
           ;
 termino : IDENTIFICADOR
         | CONSTENTERA
+        | CONSTDECIMAL
         | APAR expresion CPAR
         | COR expresion CORC
         | IDENTIFICADOR termino
         ;
+
 %%
 yyerror (s)
     char *s;
 {
-    printf ("Buajaja, esta mal!: %s\n", s);
+  extern int yylineno;
+  printf (" in line :%d\n", yylineno);
+  printf ("Buajaja, esta mal!: %s\n", s);
+  exit(-1);
 }
 
 int main()
