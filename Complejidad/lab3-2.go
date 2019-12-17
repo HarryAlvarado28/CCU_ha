@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var_entrada := 8.0
+	var_entrada := 10.0
 	fmt.Printf("Ultimo resultado: %+v\n", g(var_entrada))
 }
 

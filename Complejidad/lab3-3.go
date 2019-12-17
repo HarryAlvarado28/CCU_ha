@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var_entrada := 7
+	var_entrada := 14
 	r, c := p(var_entrada, 1)
 	fmt.Println("Result: ", r, " cantidad: ", c)
 }
